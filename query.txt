@@ -1,0 +1,7 @@
+query para listar las personas que confirmaron asistencia
+SELECT e.ideventos,e.titulo, COUNT(a.id_usuario) As Cantidad_confirmado
+FROM eventos e
+LEFT JOIN eventos a ON e.ideventos = a.ideventos
+WHERE e.ideventos = 1
+And e.confirmacion=true
+GROUP BY e.ideventos 
